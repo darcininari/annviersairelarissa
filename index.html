@@ -52,6 +52,7 @@
             top: 30px;
             right: 30px;
             z-index: 1000;
+            display: none;
         }
 
         .audio-control button {
@@ -384,11 +385,21 @@
                     <div class="dish-item">Mix grill (saucisses de Toulouse, chipolatas, rumsteak, entrecôte, poulet braisé)</div>
                     <div class="dish-item">Brochettes de poisson</div>
                     
-                    <div class="course-type">Accompagnements</div>
-                    <div class="dish-item">Riz, Alloco, frites</div>
-                    
                     <div class="course-type">Dessert</div>
-                    <div class="dish-item">Marquise au chocolat</div>
+                    <div class="dish-item">Marquise au chocolat avec crème anglaise</div>
+                </div>
+            </div>
+
+            <!-- ACCOMPAGNEMENTS -->
+            <div class="day-section">
+                <div class="day-header">🍽️ Accompagnements</div>
+                
+                <div class="meal-block">
+                    <div class="dish-item">Manioc</div>
+                    <div class="dish-item">Banane vapeur</div>
+                    <div class="dish-item">Riz</div>
+                    <div class="dish-item">Alloco</div>
+                    <div class="dish-item">Frites</div>
                 </div>
             </div>
 
@@ -403,7 +414,9 @@
 
                 <div class="meal-block">
                     <div class="meal-title">Déjeuner</div>
-                    <div class="course-type">Plat</div>
+                    <div class="course-type">Plats</div>
+                    <div class="dish-item">Riz sauté aux crevettes</div>
+                    <div class="dish-item">Kédjénou de Poulet</div>
                     <div class="dish-item">Bouillon de poisson</div>
                     
                     <div class="course-type">Dessert</div>
@@ -420,6 +433,13 @@
     <script>
         let isPlaying = false;
         const audio = document.getElementById('forestAudio');
+
+        // Démarrage automatique du son
+        window.addEventListener('load', function() {
+            audio.play().catch(function(error) {
+                console.log('Autoplay bloqué par le navigateur:', error);
+            });
+        });
 
         function toggleAudio() {
             if (isPlaying) {
